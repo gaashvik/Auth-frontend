@@ -1,8 +1,9 @@
+@import "tailwindcss";
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   white-space: pre-wrap; 
   word-break: break-all; 

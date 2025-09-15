@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Table } from 'reactstrap';
 
 export default function SessionRegistrationModal() {
-  const { registrationCompleted, setRegistrationCompleted } = useRegistration();
+  const { registered, setRegistered } = useRegistration();
   const { user } = useUser();
   const [modalOpen, setModalOpen] = useState(false);
   const [activeDevices, setActiveDevices] = useState([]);
@@ -47,8 +47,8 @@ export default function SessionRegistrationModal() {
       } else if (!res.ok) {
         console.error('Failed to register session');
       } else {
-        // Device registration completed successfully
-        setRegistrationCompleted(true);
+
+        setRegistered(true);
       }
     };
 
@@ -77,7 +77,7 @@ export default function SessionRegistrationModal() {
     if (res.ok) {
       setModalOpen(false);
       setActiveDevices([]);
-      setRegistrationCompleted(true); // registration now completed after revoke
+      setRegistered(true); // registration now completed after revoke
     } else if (res.status === 409) {
       const data = await res.json();
       setActiveDevices(data.active_devices);
