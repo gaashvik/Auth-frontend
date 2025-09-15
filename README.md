@@ -6,6 +6,12 @@ A Next.js project integrating **Auth0 authentication** with **device registratio
 
 ---
 
+## Screenshots
+
+![N Device Limit](./images/image.png) 
+
+---
+
 ## Features
 
 - **Auth0 Authentication**  
@@ -24,12 +30,6 @@ A Next.js project integrating **Auth0 authentication** with **device registratio
 
 - **Bootstrap & Reactstrap UI**  
   Responsive design using Bootstrap 4 and Reactstrap components.
-
----
-
-## Screenshots
-
-![N Device Limit](./images/image.png) 
 
 ---
 
