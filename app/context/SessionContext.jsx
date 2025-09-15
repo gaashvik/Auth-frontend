@@ -36,7 +36,7 @@ export const SessionProvider = ({ children, pauseCheck = false }) => {
         });
 
         const res = await fetch(
-          `http://localhost:8000/api/check-session?device_id=${DEVICE_ID}`,
+          `https://auth-backend-2rg0.onrender.com/api/check-session?device_id=${DEVICE_ID}`,
           {
             headers: {
               'Content-Type': 'application/json',

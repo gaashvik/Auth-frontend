@@ -12,7 +12,7 @@ export const GET = async (request) => {
     console.log(accessToken)
     const apiPort = process.env.API_PORT || 3001;
     // console.log(accessToken)
-    const response = await fetch(`http://localhost:${apiPort}/api/shows`, {
+    const response = await fetch(`https://auth-backend-2rg0.onrender.com/api/shows`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },

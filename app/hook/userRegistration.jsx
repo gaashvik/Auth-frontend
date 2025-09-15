@@ -27,7 +27,7 @@ export default function SessionRegistrationModal() {
       const token = await getAccessToken({ audience: process.env.NEXT_PUBLIC_AUTH0_AUDIENCE });
       setAccessToken(token);
 
-      const res = await fetch('http://localhost:8000/api/sessions', {
+      const res = await fetch('https://auth-backend-2rg0.onrender.com/api/sessions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,13 +58,13 @@ export default function SessionRegistrationModal() {
   const revokeDevice = async (deviceIdToRevoke) => {
     if (!accessToken) return;
 
-    await fetch('http://localhost:8000/api/sessions/revoke', {
+    await fetch('https://auth-backend-2rg0.onrender.com/api/sessions/revoke', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
       body: JSON.stringify({ device_id: deviceIdToRevoke }),
     });
 
-    const res = await fetch('http://localhost:8000/api/sessions', {
+    const res = await fetch('https://auth-backend-2rg0.onrender.com/api/sessions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
       body: JSON.stringify({
