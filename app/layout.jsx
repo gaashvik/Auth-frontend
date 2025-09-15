@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import React from 'react';
 import { Auth0Provider } from '@auth0/nextjs-auth0';
 import { SessionProvider } from './context/SessionContext';
+import { RegistrationProvider } from './context/userRegisterContext';
 import SessionRegisterer from '../components/sessionRegister';
 
 export default function RootLayout({ children }) {
@@ -25,17 +26,18 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Auth0Provider>
-          <SessionProvider>
-            {/* This renders the modal and handles device registration */}
-            <SessionRegisterer />
+       <Auth0Provider>
+  <RegistrationProvider>
+    <SessionProvider>
+      <SessionRegisterer /> {/* will only run after registration */}
+      <main id="app" className="d-flex flex-column h-100">
+        <NavBar />
+        <Container className="flex-grow-1 mt-5">{children}</Container>
+      </main>
+    </SessionProvider>
+  </RegistrationProvider>
+</Auth0Provider>
 
-            <main id="app" className="d-flex flex-column h-100" data-testid="layout">
-              <NavBar />
-              <Container className="flex-grow-1 mt-5">{children}</Container>
-            </main>
-          </SessionProvider>
-        </Auth0Provider>
       </body>
     </html>
   );
