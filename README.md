@@ -29,6 +29,7 @@ A Next.js project integrating **Auth0 authentication** with **device registratio
 
 ## Screenshots
 
+![N Device Limit](./images/image.png) 
 
 ---
 
