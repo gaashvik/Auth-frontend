@@ -10,7 +10,6 @@ export default function Index() {
     <>
       <Hero />
       <hr />
-      <Content />
     </>
   );
 }
