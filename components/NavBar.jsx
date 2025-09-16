@@ -155,7 +155,7 @@ const NavBar = () => {
                 <div className="px-2">
                   <AnchorLink
                     href="/auth/login"
-                    className="block w-full bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium text-center transition-colors"
+                    className="block w-full bg-slate-900 hover:bg-slate-800 text-black px-4 py-2 rounded-lg text-sm font-medium text-center transition-colors"
                     testId="navbar-login-mobile"
                   >
                     Sign In
